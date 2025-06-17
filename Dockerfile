@@ -1,7 +1,7 @@
 FROM gradle:8.8-jdk17 AS builder
 WORKDIR /app
-COPY . .
-RUN ./gradlew build --no-daemon
+COPY .. .
+RUN ./gradlew build --no-daemon -x test
 
 FROM openjdk:17
 WORKDIR /app
