@@ -56,6 +56,9 @@ public class UserProfile {
     @Column(name = "is_active", columnDefinition = "BOOLEAN DEFAULT TRUE")
     private boolean isActive = true;
 
+    @Column(name = "resumeLink", length = 255)
+    private String resumeLink;
+
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false,
             columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")

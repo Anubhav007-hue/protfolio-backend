@@ -53,6 +53,7 @@ public class CommunicationService {
        userDetails.put("linkedin", userProfile.getLinkedin() != null ? userProfile.getLinkedin() : "");
        userDetails.put("twitter", userProfile.getTwitter() != null ? userProfile.getTwitter() : "");
        userDetails.put("instagram", userProfile.getInstagram() != null ? userProfile.getInstagram() : "");
+       userDetails.put("resumeLink", userProfile.getResumeLink() != null ? userProfile.getResumeLink() : "");
        return userDetails;
     }
 
