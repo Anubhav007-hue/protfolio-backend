@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -34,5 +36,11 @@ public class CommunicationController {
     @GetMapping("/api/user-certificate")
     private List<Map<String, String>> getUserCertificates() {
         return communicationService.getCertificates();
+    }
+
+    @GetMapping("/api/keep-alive")
+    public String keepAlive(@RequestParam(defaultValue = "unknown") String ping) {
+        System.out.println("✅ Ping received from: " + ping + " at " + LocalDateTime.now());
+        return "🟢 Server is awake. Ping source: " + ping;
     }
 }
